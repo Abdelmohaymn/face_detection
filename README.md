@@ -11,6 +11,7 @@ This project is an Android application that performs real-time face detection us
 
 ## video
 
+https://github.com/Abdelmohaymn/face_detection/assets/68782059/af5a18a4-8a7d-49d9-bc1b-deca25abe362
 
 
 ## Installation
