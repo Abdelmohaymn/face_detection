@@ -17,7 +17,7 @@ This project is an Android application that performs real-time face detection us
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/face-detection-app.git
+    git clone https://github.com/Abdelmohaymn/face_detection.git
     ```
 
 2. Open the project in Android Studio.
