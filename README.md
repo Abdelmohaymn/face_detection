@@ -40,25 +40,6 @@ https://github.com/Abdelmohaymn/face_detection/assets/68782059/af5a18a4-8a7d-49d
 
 ## Project Structure
 
-.
-├── app
-│ ├── src
-│ │ ├── main
-│ │ │ ├── java/com/example/facedetection
-│ │ │ │ ├── MainActivity.kt
-│ │ │ │ ├── graphic
-│ │ │ │ │ ├── FaceContourGraphic.kt
-│ │ │ │ │ └── GraphicOverlay.kt
-│ │ │ ├── res
-│ │ │ │ ├── drawable
-│ │ │ │ │ └── ic_camera.xml
-│ │ │ │ ├── layout
-│ │ │ │ │ └── activity_main.xml
-│ │ │ │ ├── values
-│ │ │ │ │ ├── colors.xml
-│ │ │ │ │ ├── strings.xml
-│ │ │ │ │ └── themes.xml
-│ │ │ ├── AndroidManifest.xml
-│ │ └── ...
-└── ...
+![Project structure](screenshots/project_structure.png)
+
 
