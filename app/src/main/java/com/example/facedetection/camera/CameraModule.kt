@@ -18,6 +18,10 @@ import java.io.File
 import java.util.*
 import java.util.concurrent.ExecutorService
 
+/**
+ * CameraModule is responsible for managing camera operations including
+ * starting the camera preview and capturing photos.
+ */
 class CameraModule(
     private val context: Context,
     private val viewFinder: PreviewView,
@@ -28,18 +32,27 @@ class CameraModule(
 
     private lateinit var imageCapture: ImageCapture
 
+    /**
+     * Starts the camera preview and sets up the image analyzer for face detection.
+     */
     fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(context)
 
         cameraProviderFuture.addListener({
             val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
+
+            // Preview use case
             val preview = Preview.Builder().build().also {
                 it.setSurfaceProvider(viewFinder.surfaceProvider)
             }
 
+            // ImageCapture use case
             imageCapture = ImageCapture.Builder().build()
+
+            // Select the back camera
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
+            // ImageAnalysis use case with a custom LuminosityAnalyzer
             val imageAnalyzer = ImageAnalysis.Builder().build().also {
                 it.setAnalyzer(cameraExecutor, LuminosityAnalyzer { bitmap ->
                     graphicOverlay.clear()
@@ -48,7 +61,10 @@ class CameraModule(
             }
 
             try {
+                // Unbind all use cases before rebinding
                 cameraProvider.unbindAll()
+
+                // Bind use cases to the camera
                 cameraProvider.bindToLifecycle(
                     context as AppCompatActivity, cameraSelector, preview, imageCapture, imageAnalyzer
                 )
@@ -58,6 +74,9 @@ class CameraModule(
         }, ContextCompat.getMainExecutor(context))
     }
 
+    /**
+     * Captures a photo and saves it to the specified output directory.
+     */
     fun takePhoto() {
         val photoFile = File(
             outputDirectory,
@@ -80,6 +99,9 @@ class CameraModule(
         })
     }
 
+    /**
+     * Directory to save captured photos.
+     */
     private val outputDirectory: File by lazy {
         val mediaDir = context.externalMediaDirs.firstOrNull()?.let {
             File(it, context.resources.getString(R.string.app_name)).apply { mkdirs() }

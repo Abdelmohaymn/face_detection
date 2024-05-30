@@ -11,12 +11,24 @@ import org.tensorflow.lite.support.image.ImageProcessor
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.image.ops.ResizeOp
 
+/**
+ * FaceDetectionModule is responsible for handling face detection
+ * using a pre-trained TensorFlow Lite model.
+ */
 class FaceDetectionModule(context: Context) {
 
     private val labels: List<String> = FileUtil.loadLabels(context, "labels.txt")
     private val model: SsdMobilenetV11Metadata1 = SsdMobilenetV11Metadata1.newInstance(context)
-    private val imageProcessor: ImageProcessor = ImageProcessor.Builder().add(ResizeOp(300, 300, ResizeOp.ResizeMethod.BILINEAR)).build()
+    private val imageProcessor: ImageProcessor = ImageProcessor.Builder()
+        .add(ResizeOp(300, 300, ResizeOp.ResizeMethod.BILINEAR))
+        .build()
 
+    /**
+     * Detects faces in the given bitmap image and adds them to the graphic overlay.
+     *
+     * @param bitmap The bitmap image in which faces need to be detected.
+     * @param graphicOverlay The overlay on which detected faces will be drawn.
+     */
     fun detectFaces(bitmap: Bitmap, graphicOverlay: GraphicOverlay) {
         var image = TensorImage.fromBitmap(bitmap)
         image = imageProcessor.process(image)
