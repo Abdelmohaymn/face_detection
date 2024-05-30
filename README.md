@@ -22,7 +22,7 @@ This project is an Android application that performs real-time face detection us
 
 2. Open the project in Android Studio.
 
-3. Build the project and run it on an Android device or emulator with camera support.
+3. Build the project and run it on an Android device.
 
 ## Usage
 
