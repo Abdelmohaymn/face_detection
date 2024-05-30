@@ -37,7 +37,6 @@ https://github.com/Abdelmohaymn/face_detection/assets/68782059/af5a18a4-8a7d-49d
 
 - CameraX
 - TensorFlow Lite
-- ConstraintLayout
 
 ## Project Structure
 
