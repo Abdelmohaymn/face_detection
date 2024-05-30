@@ -7,6 +7,7 @@ This project is an Android application that performs real-time face detection us
 - Real-time face detection using CameraX and TensorFlow Lite.
 - Overlay of detected faces on the camera preview.
 - Capture button to take photos with detected faces highlighted.
+- Store captured images to the device local storage
 - Simple and clean architecture with dependency injection.
 
 ## video
