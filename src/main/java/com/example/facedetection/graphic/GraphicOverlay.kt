@@ -1,5 +1,5 @@
 
-package com.example.facedetection
+package com.example.facedetection.graphic
 
 import android.content.Context
 import android.graphics.Canvas

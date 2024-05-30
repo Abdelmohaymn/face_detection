@@ -1,4 +1,4 @@
-package com.example.facedetection
+package com.example.facedetection.graphic
 
 import android.graphics.Canvas
 import android.graphics.Color

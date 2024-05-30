@@ -53,15 +53,13 @@ dependencies {
     implementation (libs.face.detection)
 
     // camera
-    val cameraxVersion = "1.3.0-rc01"
     implementation(libs.androidx.camera.core)
     implementation(libs.androidx.camera.camera2)
     implementation(libs.androidx.camera.lifecycle)
-    implementation(libs.androidx.camera.video)
-
     implementation(libs.androidx.camera.view)
     implementation(libs.androidx.camera.extensions)
 
-    implementation ("org.tensorflow:tensorflow-lite-support:0.1.0")
-    implementation ("org.tensorflow:tensorflow-lite-metadata:0.1.0")
+    // tenser flow lite
+    implementation (libs.tensorflow.lite.support)
+    implementation (libs.tensorflow.lite.metadata)
 }
