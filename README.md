@@ -42,4 +42,11 @@ https://github.com/Abdelmohaymn/face_detection/assets/68782059/af5a18a4-8a7d-49d
 
 ![Project structure](screenshots/project_structure.png)
 
+## How It Works
+
+1. **Camera Setup**: The app uses CameraX to set up the camera and start the camera preview.
+2. **Face Detection**: An `ImageAnalysis` analyzer processes each frame from the camera. The frames are passed to a TensorFlow Lite model (`SsdMobilenetV11Metadata1`) for face detection.
+3. **Overlay**: Detected faces are highlighted with a bounding box drawn on a `GraphicOverlay` view.
+
+
 
